@@ -1,0 +1,70 @@
+.content{ 
+  display: inline-block;
+  width: 550px;
+  justify-content: center;
+  margin-top: 15px;  
+  margin-left: 19px;      
+}
+.hero{
+  font-weight: bolder;
+  font-size:50px;           
+}
+.side {
+  font-family: 'Times New Roman';
+  
+}
+.word{
+  color: orange;
+}
+.slogen {
+  font-family: 'Times New Roman';
+  font-style: italic;
+  font-size: small;
+  color: rgb(212, 209, 209);
+}
+
+
+.templet {
+  width: 350px; 
+  display: inline-block; 
+  border-radius: 11px;    
+}
+.atra-templet{
+  display: inline-block;
+  margin-left: 35px;
+}
+.web-id {
+  display: inline-block;
+}
+
+.open{
+  background: url(../A_modern,_sleek_3D_logo_design_with_curved,_flowin.png);
+  border: solid;
+  color: rgb(255, 255, 255);
+  font-size: larger;
+  margin: 5px 5px 5px 5px;
+  padding-left: 9px;
+}
+.here{
+  color: orange;
+}
+span{
+  color: rgb(207, 207, 6);
+  font-size: 50px;
+}
+.and-out{
+  display: inline-block;
+  width: 250px;
+  text-justify: newspaper;
+  background-color: rgb(93, 90, 90);
+  padding: 9px;
+  border-radius: 6px;
+  display: flex;
+}
+.plan{
+  color: orange;
+  font-size: 60px;
+}
+li{
+  list-style: none;
+}

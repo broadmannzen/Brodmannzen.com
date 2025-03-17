@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brodmannzen.com</title>
+  <link rel="shortcut icon" href="A modern sleek 3D log.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="styles/general.css"> 
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/footer.css">
+</head>
+    <style>
+      body {
+      background: url('images/pxfuel.jpg'); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* Keeps it fixed when scrolling */
+      height: 400vh;/* Full height of viewport */
+      min-height: 200hv;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      
+      margin-top:2px ;
+      padding: 0px;
+      font-family: 'Roboto'sans-serif;
+      color: rgb(250, 250, 250); /* Adjust text color for better visibility */
+      }
+
+      .main-content {
+        flex: 1;
+        padding-bottom: 20px; /* Ensures content doesn't touch the footer */
+      
+      
+      }
+
+      .request, .order {
+        background-color: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        backdrop-filter: blur(5px);
+      }
+
+
+      .request:hover, .order:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+        transform: scale(1.1);
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+        color: #ffd700;
+      }
+
+
+      .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);/* Fixed 3-column layout*/
+            gap: 19px;
+            max-width: 90%;
+            margin: 50px auto;
+            padding: 20px;
+            height: auto;
+            justify-content: center;          
+
+        }
+
+                /* Adjust for desktop monitors (larger than 1200px) */
+        @media screen and (min-width: 1200px) {
+            .grid-container {
+                grid-template-columns: repeat(3, 1fr); /* Three-column layout */
+                max-width: 80%;
+            }
+          }
+                /* Adjust for tablets */
+        @media screen and (max-width: 1199px) {
+          .grid-container {
+            grid-template-columns: repeat(2, 1fr); /* Fixed 2-column layout for medium screens */
+          }
+        }
+
+        /* Adjust for small screens (below 768px) */
+        @media screen and (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(1, 1fr); /* More compact layout */
+               
+            }
+        }
+        /* Prevent resizing on hover */
+        .grid-container * {
+          transition: none !important; /* Disable animations */
+        }    
+
+        .title{
+          margin-left: 49px;
+        }
+        .grid-item {
+          background-color: rgb(108, 102, 102);
+          padding: 15px;
+          text-align: left;
+          position: relative;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          transition: none !important; /* Prevent any hover effects */
+        }
+
+      .footer {
+        background: url('pxfuel1.jpg'); /* Replace with your image path */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        height: auto;
+        margin-top: 150px;
+        padding: 20px;
+        text-align:center;
+        font-family: 'Roboto', sans-serif;
+        color: rgb(250, 250, 250);
+      }
+
+      .digo-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 5px;
+        width: 300px; /* Adjust as needed */
+        height: 300px; /* Adjust as needed */
+        position: relative;
+        margin: 20px auto; /* Centers the grid */
+      }
+
+        .digo-grid::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(255, 255, 255, 0.1); /* Transparent effect */
+          transform: rotate(10deg); /* Diagonal effect */
+          z-index: -1; /* Keep it behind the grid */
+          border-radius: 10px;
+        }
+
+        .digo-item {
+          background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent */
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          padding: 5px;
+          font-weight: bold;
+          color: white;
+          backdrop-filter: blur(5px); /* Frosted glass effect */
+          border-radius: 10px;
+          transition: all 0.3 ease-in-out;
+          transform: scale(1);
+        }
+        /* Hover Effect */
+        .digo-item:hover {
+          background-color: rgba(255, 255, 255, 0.4); /* Lighter effect */
+          transform: scale(1.1); /* Slight zoom */
+          box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3); /* Soft glow */
+        }
+
+
+        .digo-item p {
+          margin-top: 5px;
+          font-size: 14px;
+          font-weight: bold;
+          color: white;
+          cursor: pointer;
+          transition: color 0.3s ease-in-out;
+        }
+
+                /* Change text color on hover */
+        .digo-item:hover p {
+          color: #ffd700; /* Gold color on hover */
+        }
+
+        .report-content {
+          display: grid;
+          grid-template-columns: 1fr 1fr; /* Two columns for Services and Contacts */
+          gap: 20px;
+          padding: 20px;
+          max-width: 90%;
+          margin: auto;
+        }
+        .service, .contacts {
+          background: rgba(255, 255, 255, 0.2);
+          padding: 15px;
+          border-radius: 8px;
+          text-align: center;
+        }
+    </style>
+<body>
+  <div class="main-content">
+          <div class="header">
+            <div class="left">
+              <img onclick="" class="hamburger-menu" src="icons/hamburger-menu.svg">
+              <img class="logo" src="A modern sleek 3D log.ico">
+              </div>
+              <div class="right">
+                <button class="request">Request Quote</button>
+            </div>
+          </div>
+          <div class="content">
+            <p class="hero">
+              Are you Still <span class="word"><br>Looking for a Website<br></span> for you business?
+            </p>            
+            <p class="welcome">
+              Look no further!! <strong>Brodmannzen is here</strong> to simplify that for you.
+            </p>          
+            <p class="side">
+              This is your place! Get in touch with our service providers at Brodmann.
+              We bring your unique ideas live on the internet by creating a website for you,
+              to help you and solve the problems within your workplace.
+              This is the best platform for your business.<br>
+              Join us we will troubleshoot for you!
+            </p>          
+            <p class="slogen">
+              <strong>Let us take care of the tech while you take care of your business!</strong>
+            </p>
+          </div>
+          <div class="web-id">
+            <img  class="templet" src="pxfuel.jpg">
+          </div>
+          <div class="open">
+            <P>Welcome to Bromannzen – <span class="here">Your Digital Innovation Partner</span></P>
+            <p> Bromannzen, we bring your vision to life with cutting-edge web design, development, and digital solutions. Whether you're a startup looking for a strong online presence or an established business aiming to enhance your digital footprint, we have the expertise to create engaging, high-performance websites that captivate and convert.</p>
+          </div>
+        <div class="and-out">
+          Let's Build Something ExtraordinaryYour success is our mission. Partner with Bromannzen for innovative and results-driven web solutions. Contact us today and take the first step towards digital excellence.
+        </div>
+        <div class="plan">
+          OUR PRICING PLAN
+          <p class="pay">Once off-payment</p>
+        </div>      
+          <div class="grid-container">
+            <div class="grid-item"><div class="title">
+              SIMPLE WEBSITE(CMS)
+            </div>
+            <ul>
+              <li>Custom Design & Layout</li>
+              <li>Content Management System</li>
+              <li>Essential Pages</li>
+              <li>Security & Performance</li>            
+            </ul> 
+            <div class="price">R 3 000,00 - R 5 000,00</div>
+            </div>
+            <div class="grid-item"><div class="title">
+              BUSINESS WEBSITE
+            </div>
+              <ul>
+                <li>Custom Design & Branding</li>
+                <li>Content Management System (CMS)</li>
+                <li>Full Essential Pages</li>
+                <li>Advanced SEO Optimization</li>
+                <li>E-Commerce & Payment Integration (Optional)</li>
+                <li>Security & Performance</li>
+                <li>Lead Generation & Marketing Tools</li>
+                <li>Support & Maintenance (Optional)</li>
+              </ul>
+              <div class="price">R 6 000,00 - R 16 000,00</div> 
+            </div>
+            <div class="grid-item"><div class="title">
+              EDUCATION WEBSITE
+            </div>
+              <ul>
+                <li>Custom Design & Branding</li>
+                <li>Content Management System (CMS)</li>
+                <li>Full Essential Pages</li>
+                <li>Advanced SEO Optimization</li>
+                <li>E-Commerce & Payment Integration (Optional)</li>
+                <li>Security & Performance</li>
+                <li>Lead Generation & Marketing Tools</li>
+                <li>Support & Maintenance (Optional)</li>
+              </ul> 
+              <div class="price">R 17 000,00 - R 25 000,00</div>
+            </div>
+            <div class="grid-item"><div class="title">
+              CUSTOM WEBSITE
+            </div>
+              <ul>
+                <li>Unique & Tailored Design</li>
+                <li>Content Management System (CMS)</li>
+                <li>Essential Pages & Features</li>
+                <li>Advanced Functionality</li>
+                <li>SEO & Performance Optimization</li>
+                <li>Support & Updates (Optional)</li>
+              </ul>
+              <div class="price">R 24 000,00+</div>
+            </div>
+            <div class="grid-item"><div class="title">
+              E-COMMERCE WEBSITE
+            </div>
+              <ul>
+                <li>Custom Design & Branding</li>
+                <li>Content Management System (CMS)</li>
+                <li>Product Management</li>
+                <li>Shopping Cart & Checkout System</li>
+                <li>Order & Customer Management</li>
+                <li>SEO & Digital Marketing</li>
+                <li>Shipping & Logistics Integration</li>
+                <li>Reviews & Social Proof</li>
+                <li>Support & Maintenance (Optional)</li>
+              </ul>
+              <div class="price">R 28 000,00+</div> 
+            </div>
+            <div class="grid-item"><div class="title">
+              WEBSSITE MANAGEMANT
+            </div>
+              <ul>
+                <li>Website Maintenance & Updates</li>
+                <li>Security & Monitoring</li>
+                <li>Product Management</li>
+                <li>Performance Optimization</li>
+                <li>SEO & Digital Marketing Support</li>
+                <li>Technical Support & Troubleshooting</li>
+                <li>E-Commerce & Transaction Monitoring (If Applicable)</li>
+                <li>Hosting & Domain Management (Optional)</li>
+                <li>Backup & Recovery</li>
+              </ul>
+              <div class="price">R 30 000,00+</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div>
+      <button class="order">PLACE ORDER</button>
+      <div class="slide-show">
+      <img src="../slideshow/slide1.jpg" alt="Slide 1">
+      <img src="../slideshow/slide2.jpg" alt="Slide 2">
+      <img src="../slideshow/slide3.png" alt="Slide 3">
+      <img src="../slideshow/slide4.jpg" alt="Slide 4">
+      <img src="../slideshow/slide5.webp" alt="Slide 5">
+      </div>  
+  </div>
+
+    <footer class="footer">
+      <div class="digo-grid">
+       <div class="digo-item"><img class="nav" src="icons/icons8-home-50.png">
+        <p>Home</p>
+      </div>
+        <div class="digo-item"><img class="nav" src="icons/icons8-portfolio-50.png">
+          <p>Portfolio</p>
+        </div>
+        <div class="digo-item"><img class="nav" src="icons/icons8-faq-50.png">
+          <p>FAQ</p>
+        </div>
+        <div class="digo-item"><img class="nav" src="icons/icons8-team-goal-48.png">
+          <p>Our Team</p>
+        </div>
+        <div class="digo-item"><img class="nav" src="icons/icons8-categories-50.png">
+        <p>Categories</p>
+        </div>
+        <div class="digo-item"><img class="nav" src="icons/explore.svg">
+          <p>Explore</p>
+        </div>
+        <div class="digo-item"><img class="nav" src="icons/icons8-newspaper-50.png">
+          <p>News</p>
+        </div>
+        <div class="digo-item"><img class="nav" src="icons/icons8-handshake-50.png">
+          <p>Partnership</p>
+        </div>
+      <div class="digo-item"><img class="nav" src="icons/icons8-review-50.png">
+        <p>Reviews</p>
+      </div>
+     </div>
+      <div class="report">
+        <class class="report-content">
+                <div class="advice">
+                  <p class="sure">Looking to make contact with Brodmannzen?</p>
+                <p class="then">Want to make contact brodmann. SAME DAY RESPONSE. Phone or whatsapp us, Email, or use our Immediate Action Request. EXCEPTIONAL CLIENT CARE.<br>WE ARE LOCATED NEAR VUT Vanderbijlpark</p>
+                </div>
+                <div class="service">
+                  <h3>Our Services</h3>
+                  <p>Web development, Logo design, and Google IT Support.</p>
+        
+                </div>
+                <div class="contacts">
+                  <h3>Contact Us</h3>
+                   <p>Phone/WhatsApp: <u>+27791308125</u></p>
+                   <p>Phone/WhatsApp: <u>+27792237522</u></p>
+                  <p>Email: <u>brodmannzen@gmail.com</u></p>
+                  <img class="send" src="icons/icons8-whatsapp-50.png">
+                  <img class="send" src="icons/icons8-email-50.png">
+                  <img class="send" src="icons/icons8-linkedin-50.png">
+                  <img class="send" src="icons/icons8-call-50.png">        
+                </div>
+                <img class="code" src="QRcode.jpeg">
+        </class>
+      </div>
+      <div class="inc">
+        <p><img class="apple" src="icons/icons8-apple-inc-50.png">
+        Place your order to get the best and fast features. <span class="order-link">Order now&#62;</span></p>
+      </div>
+      <p>At Brodmannzen we’re very proud to be an enabler allowing other businesses to thrive. We’re not just web developer. We’re your tech partner!</p>
+      <p>© 2025 Brodmannzen. All Rights Reserved.</p>
+    </footer> 
+</body>
+
+</html> 

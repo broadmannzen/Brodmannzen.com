@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Statistics</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #04141b;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: conic-gradient(
+                #00aaff var(--percentage),
+                #2c3e50 var(--percentage)
+            );
+        }
+        .circle::after {
+            content: attr(data-label);
+            position: absolute;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="circle" id="html" data-label="HTML"></div>
+        <div class="circle" id="css" data-label="CSS"></div>
+        <div class="circle" id="java" data-label="Java"></div>
+        <div class="circle" id="adobe" data-label="Adobe XD"></div>
+        <div class="circle" id="figma" data-label="Figma"></div>
+    </div>
+
+    <script>
+        function generateRandomPercentage() {
+            return Math.floor(Math.random() * 101) + '%';
+        }
+
+        document.querySelectorAll('.circle').forEach(circle => {
+            let percentage = generateRandomPercentage();
+            circle.style.setProperty('--percentage', percentage);
+            circle.setAttribute('data-label', circle.getAttribute('data-label') + ' ' + percentage);
+        });
+    </script>
+</body>
+</html>

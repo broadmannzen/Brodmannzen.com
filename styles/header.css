@@ -1,0 +1,78 @@
+.header {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  background: url(../pxfuel1.jpg);
+  border-radius: 11px;
+  border-bottom-left-radius:0px ;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensures it's above other elements */
+}
+
+body {
+  padding-top: 50px; /* Prevents content from being hidden under the fixed header */
+}
+
+.left {
+  width: 250px;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.hamburger-menu {
+  height: 30px;
+  margin-left: 22px;
+  margin-top: 7px;
+  cursor: pointer;
+}
+.hamburger-menu:hover{
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+}
+
+.logo {
+  height: 30px;
+  margin-left: 11px;
+  margin-top: 7px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+.request {
+  /* background-color: orange; */
+  height: 37px;
+  border-radius: 11px;
+  cursor: pointer;
+  padding: 10px 20px;
+  padding-bottom: 30px;
+  font-size: larger;
+  border: none;
+  color: orange;
+  /* transition: background 0.3s ease; */
+}
+
+.request:hover {
+  background-color: darkorange;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .right {
+      justify-content: center; /* Center the button on small screens */
+      padding-right: 0;
+  }
+}

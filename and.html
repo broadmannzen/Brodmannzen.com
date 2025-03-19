@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Statistics</title>
+    <style>
+        body {
+            background-color: #0f1d1f;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+        }
+        
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .skill {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: conic-gradient(#76b900 var(--percentage), #333 var(--percentage));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: bold;
+            color: white;
+            position: relative;
+        }
+
+        .circle::before {
+            content: "";
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            background-color: #0f1d1f;
+            border-radius: 50%;
+        }
+
+        .circle span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-name {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title">My Core Skills</div>
+
+    <div class="skills-container">
+        <div class="skill">
+            <div class="circle" style="--percentage: 95%;">
+                <span>95%</span>
+            </div>
+            <div class="skill-name">HTML</div>
+        </div>
+
+        <div class="skill">
+            <div class="circle" style="--percentage: 95%;">
+                <span>95%</span>
+            </div>
+            <div class="skill-name">CSS</div>
+        </div>
+
+        <div class="skill">
+            <div class="circle" style="--percentage: 75%;">
+                <span>75%</span>
+            </div>
+            <div class="skill-name">Figma</div>
+        </div>
+
+        <div class="skill">
+            <div class="circle" style="--percentage: 75%;">
+                <span>75%</span>
+            </div>
+            <div class="skill-name">Adobe XD</div>
+        </div>
+    </div>
+
+</body>
+</html>

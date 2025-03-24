@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories</title>
+  <link rel="shortcut icon" href="A modern sleek 3D log.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/sidebar.css">
+</head>
+    <style>
+      body {
+      background: url('images/pxfuel.jpg'); /* Replace with your image path */
+      background-size: cover;
+      transition: transform 0.3s ease-in-out;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* Keeps it fixed when scrolling */
+      height: 300vh;/* Full height of viewport */
+      min-height: 200hv;
+      display: flex;
+      flex-direction: column;
+      margin-left: 9px;
+      font-size: small;
+      margin-top:2px ;
+      padding: 0px;
+      font-family: 'Roboto'sans-serif;
+      color: rgb(250, 250, 250); /* Adjust text color for better visibility */
+      }
+
+      .container-web {
+      display: grid;
+      grid-gap: 20px;
+      padding: 20px;
+      max-width: auto;
+      margin: 0 auto;
+      margin-top: 100px;
+    }
+
+    .personal-portfolio, .business-website, .education-website, .ecommerce-website, .management-website {
+      display: grid;
+      grid-gap: 14px;
+      
+    }
+
+    /* Personal/Simple/Portfolio Website - 1 by 3 Grid */
+    .personal-portfolio {
+      grid-template-columns: repeat(3, 1fr);  /* 3 columns */
+    }
+
+    .personal-portfolio .item {
+      background-color: #f9c2ff;
+      padding: 0px;
+      text-align: center;
+      border-radius: 8px;
+      width: 100%;
+      height: 400px;
+      position: relative;
+      overflow: hidden;
+
+    }
+    .personal-portfolio .item img {
+    width: 100%;                /* Make the image fill the entire width */
+    height: 400px;               /* Make the image fill the entire height */
+    object-fit: cover;          /* Ensures the image covers the container without distortion */
+    object-position: center;    /* Centers the image inside the container */
+}
+    
+
+    /* Business Website - 3 by 3 Grid */
+    .business-website {
+      grid-template-columns: repeat(3, 1fr);  /* 3 columns */
+    }
+
+    .business-website .item {
+      background-color: #ffecb3;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    /* Education Website - 2 by 3 Grid */
+    .education-website {
+      grid-template-columns: repeat(3, 1fr);  /* 3 columns */
+    }
+
+    .education-website .item {
+      background-color: #c2f0f7;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    /* E-Commerce Website - 3 by 3 Grid */
+    .ecommerce-website {
+      grid-template-columns: repeat(3, 1fr);  /* 3 columns */
+    }
+
+    .ecommerce-website .item {
+      background-color: #f9d84e;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    /* Website Management - 3 by 3 Grid */
+    .management-website {
+      grid-template-columns: repeat(3, 1fr);  /* 3 columns */
+    }
+
+    .management-website .item {
+      background-color: #ff5733;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    /* Custom Website - Single Item */
+    .custom-website {
+      background-color: #8ad8b8;
+      padding: 40px;
+      text-align: center;
+      border-radius: 8px;
+    }
+    .item:hover{
+      transform: scale(1.05);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Responsive Grid Layouts */
+    @media (max-width: 1024px) {
+      .personal-portfolio {
+        grid-template-columns: repeat(2, 1fr);  /* 2 columns on medium screens */
+      }
+
+      .business-website, .education-website, .ecommerce-website, .management-website {
+        grid-template-columns: repeat(2, 1fr);  /* 2 columns on medium screens */
+      }
+    }
+
+    @media (max-width: 768px) {
+      .personal-portfolio, .business-website, .education-website, .ecommerce-website, .management-website {
+        grid-template-columns: 1fr;  /* 1 column on small screens */
+      }
+
+      .container {
+        padding: 10px;
+      }
+    }
+
+    /* Box-sizing to prevent overflow */
+    *, *:before, *:after {
+      box-sizing: border-box;
+    }
+    .container-logo {
+      display: block; /* Default block display to prevent interruption */
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1{
+      color: orange;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Logo Design Grid */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 columns */
+      gap: 20px;
+      padding: 20px 0;
+    }
+
+    .logo-grid .logo-item {
+      background-color: #c2f0f7;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .logo-grid img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Logo Grid Hover Effect */
+    .logo-item:hover {
+      transform: scale(1.05);
+    }
+
+    /* Responsive Grid Layouts */
+    @media (max-width: 1024px) {
+      .logo-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+      }
+    }
+
+    @media (max-width: 768px) {
+      .logo-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo-grid {
+        grid-template-columns: 1fr; /* 1 column on very small screens */
+      }
+    }
+
+    /* Clear any previous container issues */
+    .clear {
+      clear: both;
+    }
+
+
+    </style>
+<body>
+  <div class="header">
+    <div class="left">
+      <img class="hamburger-menu" src="icons/hamburger-menu.svg" onclick="openSidebar()">
+      <img class="logo" src="A modern sleek 3D log.ico">
+      </div>
+      <div class="right">
+        <button class="request">Request Quote</button>
+    </div>
+  </div>
+
+  <div class="sidebar" id="sidebar">
+    <span class="close-btn" onclick="closeSidebar()">&times;</span>
+    <a href="index.html">Home</a>
+    <a href="categories.html">Categories</a>
+    <a href="explore.html">Explore</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="partnership.html">Partnership</a>
+    <a href="faq.html">FAQs</a>
+    <a href="ourteam.html">Our Team</a>
+    <a href="news.html">News</a>
+    <a href="reviews.html">Reviews</a>
+  </div>
+  
+
+  <script>
+    function openSidebar() {
+      document.getElementById("sidebar").classList.add("open-sidebar");
+    }
+
+    function closeSidebar() {
+      document.getElementById("sidebar").classList.remove("open-sidebar");
+    }
+  </script>
+    <div class="main-content">
+      <div>
+        
+        <div class="container-web">
+          <h1>Categories</h1>
+
+          <!-- Personal/Simple/Portfolio Website -->
+          <h2>Personal/Simple/Portfolio Website</h2>
+          <div class="personal-portfolio">
+            <div class="item">
+              <img src="categories/portfolio1.webp" alt="portfolio 1">                
+            </div>
+            <div class="item">
+              <img src="categories/portfolio2.png" alt="portfolio 2">
+              <!-- <h3>Portfolio 2</h3>
+              <p>Some description about portfolio item 2</p> -->
+            </div>
+            <div class="item">
+              <img src="categories/portfolio3.png" alt="portfolio 3">
+              <!-- <h3>Portfolio 3</h3>
+              <p>Some description about portfolio item 3</p> -->
+            </div>
+          </div>
+      
+          <!-- Business Website -->
+          <h2>Business Website</h2>
+          <div class="business-website">
+            <div class="item">
+              <h3>Business Item 1</h3>
+              <p>Description for business website 1</p>
+            </div>
+            <div class="item">
+              <h3>Business Item 2</h3>
+              <p>Description for business website 2</p>
+            </div>
+            <div class="item">
+              <h3>Business Item 3</h3>
+              <p>Description for business website 3</p>
+            </div>
+            <div class="item">
+              <h3>Business Item 4</h3>
+              <p>Description for business website 4</p>
+            </div>
+            <div class="item">
+              <h3>Business Item 5</h3>
+              <p>Description for business website 5</p>
+            </div>
+            <div class="item">
+              <h3>Business Item 6</h3>
+              <p>Description for business website 6</p>
+            </div>
+            <div class="item">
+              <h3>Business Item 7</h3>
+              <p>Description for business website 7</p>
+            </div>
+            <div class="item">
+              <h3>Business Item 8</h3>
+              <p>Description for business website 8</p>
+            </div>
+            <div class="item">
+              <h3>Business Item 9</h3>
+              <p>Description for business website 9</p>
+            </div>
+          </div>
+      
+          <!-- Education Website -->
+          <h2>Education Website</h2>
+          <div class="education-website">
+            <div class="item">
+              <h3>Education Item 1</h3>
+              <p>Details for education website 1</p>
+            </div>
+            <div class="item">
+              <h3>Education Item 2</h3>
+              <p>Details for education website 2</p>
+            </div>
+            <div class="item">
+              <h3>Education Item 3</h3>
+              <p>Details for education website 3</p>
+            </div>
+            <div class="item">
+              <h3>Education Item 4</h3>
+              <p>Details for education website 4</p>
+            </div>
+            <div class="item">
+              <h3>Education Item 5</h3>
+              <p>Details for education website 5</p>
+            </div>
+          </div>
+      
+          <!-- E-Commerce Website -->
+          <h2>E-Commerce Website</h2>
+          <div class="ecommerce-website">
+            <div class="item">
+              <h3>E-Commerce Item 1</h3>
+              <p>Product details for item 1</p>
+            </div>
+            <div class="item">
+              <h3>E-Commerce Item 2</h3>
+              <p>Product details for item 2</p>
+            </div>
+            <div class="item">
+              <h3>E-Commerce Item 3</h3>
+              <p>Product details for item 3</p>
+            </div>
+            <div class="item">
+              <h3>E-Commerce Item 4</h3>
+              <p>Product details for item 4</p>
+            </div>
+            <div class="item">
+              <h3>E-Commerce Item 5</h3>
+              <p>Product details for item 5</p>
+            </div>
+            <div class="item">
+              <h3>E-Commerce Item 6</h3>
+              <p>Product details for item 6</p>
+            </div>
+            <div class="item">
+              <h3>E-Commerce Item 7</h3>
+              <p>Product details for item 7</p>
+            </div>
+            <div class="item">
+              <h3>E-Commerce Item 8</h3>
+              <p>Product details for item 8</p>
+            </div>
+            <div class="item">
+              <h3>E-Commerce Item 9</h3>
+              <p>Product details for item 9</p>
+            </div>
+          </div>
+      
+          <!-- Website Management -->
+          <h2>Website Management</h2>
+          <div class="management-website">
+            <div class="item">
+              <h3>Management Item 1</h3>
+              <p>Management details 1</p>
+            </div>
+            <div class="item">
+              <h3>Management Item 2</h3>
+              <p>Management details 2</p>
+            </div>
+            <div class="item">
+              <h3>Management Item 3</h3>
+              <p>Management details 3</p>
+            </div>
+            <div class="item">
+              <h3>Management Item 4</h3>
+              <p>Management details 4</p>
+            </div>
+            <div class="item">
+              <h3>Management Item 5</h3>
+              <p>Management details 5</p>
+            </div>
+          </div>
+      
+          <!-- Custom Website -->
+          <h2>Custom Website</h2>
+          <div class="custom-website">
+            <h3>Custom Website Item</h3>
+            <p>Details for custom website.</p>
+          </div>
+        </div>
+
+        <div class="container">
+          <!-- Logo Design Grid Section -->
+          <div class="logo-section">
+            <h2>Logo Designs</h2>
+            <div class="logo-grid">
+              <div class="logo-item">
+                <img src="categories/free.webp" alt="Logo 1">
+                <p>Logo Design 1</p>
+              </div>
+              <div class="logo-item">
+                <img src="logo2.png" alt="Logo 2">
+                <p>Logo Design 2</p>
+              </div>
+              <div class="logo-item">
+                <img src="logo3.png" alt="Logo 3">
+                <p>Logo Design 3</p>
+              </div>
+              <div class="logo-item">
+                <img src="logo4.png" alt="Logo 4">
+                <p>Logo Design 4</p>
+              </div>
+              <div class="logo-item">
+                <img src="logo5.png" alt="Logo 5">
+                <p>Logo Design 5</p>
+              </div>
+              <div class="logo-item">
+                <img src="logo6.png" alt="Logo 6">
+                <p>Logo Design 6</p>
+              </div>
+              <div class="logo-item">
+                <img src="logo7.png" alt="Logo 7">
+                <p>Logo Design 7</p>
+              </div>
+              <div class="logo-item">
+                <img src="logo8.png" alt="Logo 8">
+                <p>Logo Design 8</p>
+              </div>
+              <div class="logo-item">
+                <img src="logo9.png" alt="Logo 9">
+                <p>Logo Design 9</p>
+              </div>
+              <div class="logo-item">
+                <img src="logo10.png" alt="Logo 10">
+                <p>Logo Design 10</p>
+              </div>
+              <div class="logo-item">
+                <img src="logo11.png" alt="Logo 11">
+                <p>Logo Design 11</p>
+              </div>
+              <div class="logo-item">
+                <img src="logo12.png" alt="Logo 12">
+                <p>Logo Design 12</p>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Optional: Add clear div to ensure no content floats around -->
+          <div class="clear"></div>
+        </div>
+      
+
+      </div>    
+    </div>
+</body>
+</html>

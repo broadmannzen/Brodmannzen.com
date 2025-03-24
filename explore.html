@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore</title>
+  <link rel="shortcut icon" href="A modern sleek 3D log.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/sidebar.css">
+</head>
+    <style>
+      body {
+      background: url('images/pxfuel.jpg'); /* Replace with your image path */
+      background-size: cover;
+      transition: transform 0.3s ease-in-out;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* Keeps it fixed when scrolling */
+      height: 80vh;/* Full height of viewport */
+      display: flex;
+      flex-direction: column;
+      margin-left: 9px;
+      font-size: small;
+      margin-top:2px ;
+      padding: 0px;
+      font-family: 'Roboto'sans-serif;
+      color: rgb(250, 250, 250); /* Adjust text color for better visibility */
+      }
+      .container {
+            max-width: 800px;
+            margin: 100px 10px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            color: orange;
+        }
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: #fff;
+            border-left: 5px solid #007BFF;
+            text-align: left;
+        }
+        .section h2 {
+            margin: 0;
+            color: #007BFF;
+        }
+        .section p {
+            color: #555;
+        }
+
+    </style>
+<body>
+  <div class="header">
+    <div class="left">
+      <img class="hamburger-menu" src="icons/hamburger-menu.svg" onclick="openSidebar()">
+      <img class="logo" src="A modern sleek 3D log.ico">
+      </div>
+      <div class="right">
+        <button class="request">Request Quote</button>
+    </div>
+  </div>
+
+  <div class="sidebar" id="sidebar">
+    <span class="close-btn" onclick="closeSidebar()">&times;</span>
+    <a href="index.html">Home</a>
+    <a href="categories.html">Categories</a>
+    <a href="explore.html">Explore</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="partnership.html">Partnership</a>
+    <a href="faq.html">FAQs</a>
+    <a href="ourteam.html">Our Team</a>
+    <a href="news.html">News</a>
+    <a href="reviews.html">Reviews</a>
+  </div>
+  
+
+  <script>
+    function openSidebar() {
+      document.getElementById("sidebar").classList.add("open-sidebar");
+    }
+
+    function closeSidebar() {
+      document.getElementById("sidebar").classList.remove("open-sidebar");
+    }
+  </script>
+    <div class="main-content">
+      <div>
+        <div class="container">
+          <h1>Explore Brodmannzen</h1>
+          
+          <div class="section">
+              <h2>Case Studies & Success Stories</h2>
+              <p>Dive into real-world projects where we’ve transformed ideas into digital solutions. Learn how we tackled challenges and delivered results.</p>
+          </div>
+  
+          <div class="section">
+              <h2>Industry Insights & Trends</h2>
+              <p>Stay ahead with expert articles on web development, UI/UX design, and digital marketing. Discover emerging technologies shaping the future.</p>
+          </div>
+  
+          <div class="section">
+              <h2>Behind the Scenes</h2>
+              <p>Get an exclusive look at our creative process, from brainstorming to developing and refining projects. Meet the minds behind Brodmannzen.</p>
+          </div>
+  
+          <div class="section">
+              <h2>Interactive Demos & Tutorials</h2>
+              <p>Engage with hands-on demos and step-by-step tutorials that showcase our expertise. Learn best practices in web design, development, and optimization.</p>
+          </div>
+      </div>
+      </div>    
+    </div>
+</body>
+</html>

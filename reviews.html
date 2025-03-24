@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews</title>
+  <link rel="shortcut icon" href="A modern sleek 3D log.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/sidebar.css">
+</head>
+<style>
+  body {
+    background: url('images/pxfuel.jpg'); /* Replace with your image path */
+    background-size: cover;
+    transition: transform 0.3s ease-in-out;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps it fixed when scrolling */
+    min-height: 100vh; /* Ensure full height of viewport */
+    display: flex;
+    flex-direction: column;
+    margin-left: 9px;
+    font-size: small;
+    margin-top: 15px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(250, 250, 250); /* Adjust text color for better visibility */
+  }
+
+  /* Container for the review box */
+  .review-container {
+    position: fixed;  /* Make the review form fixed at the bottom */
+    bottom: 0px;     /* Distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    max-width: 800px;
+    padding: 20px;
+    padding-right: 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    width: 90%; /* Set width to a percentage for responsiveness */
+    box-sizing: border-box;
+  }
+
+  /* Form styling */
+  .review-form input, .review-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  .review-form button {
+    padding: 10px 20px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .review-form button:hover {
+    background-color: orange;
+  }
+
+  /* Review section */
+  .reviews {
+    margin-top: 20px;
+  }
+
+  .review-item {
+    padding: 10px;
+    margin-right: 2%;
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 6px;
+  }
+
+  .review-item h3 {
+    margin: 0;
+  }
+
+</style>
+
+<body>
+  <div class="header">
+    <div class="left">
+      <img class="hamburger-menu" src="icons/hamburger-menu.svg" onclick="openSidebar()">
+      <img class="logo" src="A modern sleek 3D log.ico">
+    </div>
+    <div class="right">
+      <button class="request">Request Quote</button>
+    </div>
+  </div>
+
+  <div class="sidebar" id="sidebar">
+    <span class="close-btn" onclick="closeSidebar()">&times;</span>
+    <a href="index.html">Home</a>
+    <a href="categories.html">Categories</a>
+    <a href="explore.html">Explore</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="partnership.html">Partnership</a>
+    <a href="faq.html">FAQ</a>
+    <a href="ourteam.html">Our Team</a>
+    <a href="news.html">News</a>
+    <a href="reviews.html">Reviews</a>
+  </div>
+
+  <script>
+     function openSidebar() {
+      document.getElementById("sidebar").classList.add("open-sidebar");
+    }
+
+    function closeSidebar() {
+      document.getElementById("sidebar").classList.remove("open-sidebar");
+    }
+  </script>
+
+  <div class="main-content">
+          <div class="reviews" id="reviewsSection">
+            <h2>All Reviews</h2>
+            <!-- Reviews will be dynamically added here -->
+          </div>
+      
+
+        <div class="review-container">
+          <h2>Leave a Review</h2>
+          <form class="review-form" id="reviewForm">
+            <input type="text" id="name" placeholder="Your name" required>
+            <textarea id="review" rows="4" placeholder="Write your review here..." required></textarea>
+            <button type="submit">Submit Review</button>
+          </form>
+        </div>
+
+        <script>
+          // Function to store and display reviews
+          function loadReviews() {
+            const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+            const reviewsSection = document.getElementById('reviewsSection');
+            reviewsSection.innerHTML = '<h2>All Reviews</h2>'; // Reset the reviews section
+
+            reviews.forEach((review) => {
+              const reviewDiv = document.createElement('div');
+              reviewDiv.classList.add('review-item');
+              reviewDiv.innerHTML = `<h3>${review.name}</h3><p>${review.text}</p>`;
+              reviewsSection.appendChild(reviewDiv);
+            });
+          }
+
+          // Handle form submission
+          document.getElementById('reviewForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const review = document.getElementById('review').value;
+
+            // Get the existing reviews from localStorage
+            const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+            
+            // Add the new review to the array
+            reviews.push({ name, text: review });
+
+            // Save the updated reviews back to localStorage
+            localStorage.setItem('reviews', JSON.stringify(reviews));
+
+            // Clear the form
+            document.getElementById('name').value = '';
+            document.getElementById('review').value = '';
+
+            // Reload the reviews
+            loadReviews();
+          });
+
+          // Load reviews when the page loads
+          window.onload = loadReviews;
+
+        </script>
+  </div>
+</body>
+</html>

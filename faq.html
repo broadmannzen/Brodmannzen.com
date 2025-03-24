@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ</title>
+  <link rel="shortcut icon" href="A modern sleek 3D log.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/sidebar.css">
+</head>
+    <style>
+        body {
+        background: url('images/pxfuel.jpg'); /* Replace with your image path */
+        background-size: cover;
+        transition: transform 0.3s ease-in-out;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Keeps it fixed when scrolling */
+        height: 400vh;/* Full height of viewport */
+        min-height: 200hv;
+        display: flex;
+        flex-direction: column;
+        margin-left: 9px;
+        font-size: x-small;
+        margin-top:2px ;
+        padding: 0px;
+        font-family: 'Roboto'sans-serif;
+        color: rgb(250, 250, 250); /* Adjust text color for better visibility */
+        }
+        .faq-section {
+      max-width: 900px;
+      margin: 20px auto auto 40px;
+      margin-top: 80px;
+    }
+
+    .faq-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5em;
+      font-weight: bold;
+      color:orange;
+    }
+
+    .accordion-button {
+      background-color: transparent;
+      color: black;
+      font-size: 1.1em;
+      border-radius: 11px;
+      border: 0.3px;
+      padding: 4px;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background-color: rgb(213, 211, 211, 0.7);;
+    }
+
+    .accordion-item {
+      border: none;
+      margin-bottom: 1px;
+    }
+
+    .accordion-body {
+      font-size: 1.1em;
+      padding: 15px;
+      background-color: rgba(160, 156, 156, 0.4);
+    }
+
+    /* COMMENT SECTION STYLES */
+    .comment-section {
+      position: fixed;
+      bottom: 0;
+      width: 83%;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+      z-index: 100;
+    }
+
+    .comment-header {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .comment-box {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .comment-input {
+      width: 94%;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      background-color: #f1f1f1;
+      outline: none;
+    }
+
+    .comment-input:focus {
+      background-color: whitesmoke;
+    }
+
+    .comment-list {
+      margin-top: 20px;
+    }
+
+    .comment-item {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    .comment-item .comment-user {
+      font-weight: bold;
+      color: whitesmoke;
+      margin-bottom: 5px;
+    }
+
+    .comment-item .comment-text {
+      font-size: 1.1em;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .comment-item .comment-date {
+      font-size: 0.9em;
+      color: #888;
+    }
+
+    .comment-item .comment-meta {
+      font-size: 0.9em;
+      color: #888;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .comment-item .comment-meta a {
+      text-decoration: none;
+      color: wheat;
+    }
+
+    .comment-submit-btn {
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: white;
+      font-size: 1em;
+      border-radius: 20px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .comment-submit-btn:hover {
+      background-color: #0056b3;
+    }
+    
+
+    </style>
+<body>
+  <div class="header">
+    <div class="left">
+      <img class="hamburger-menu" src="icons/hamburger-menu.svg" onclick="openSidebar()">
+      <img class="logo" src="A modern sleek 3D log.ico">
+      </div>
+      <div class="right">
+        <button class="request">Request Quote</button>
+    </div>
+  </div>
+
+  <div class="sidebar" id="sidebar">
+    <span class="close-btn" onclick="closeSidebar()">&times;</span>
+    <a href="index.html">Home</a>
+    <a href="categories.html">Categories</a>
+    <a href="explore.html">Explore</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="partnership.html">Partnership</a>
+    <a href="faq.html">FAQs</a>
+    <a href="ourteam.html">Our Team</a>
+    <a href="news.html">News</a>
+    <a href="reviews.html">Reviews</a>
+  </div>
+  
+
+  <script>
+    function openSidebar() {
+      document.getElementById("sidebar").classList.add("open-sidebar");
+    }
+
+    function closeSidebar() {
+      document.getElementById("sidebar").classList.remove("open-sidebar");
+    }
+  </script>
+    <div class="main-content">    
+      <div class="faq-section">
+        <h1 class="faq-title">Frequently Asked Questions (FAQs)</h1>
+        <div class="accordion" id="faqAccordion"></div>
+    </div>
+    
+    <!-- COMMENT SECTION -->
+    <div class="comment-section">
+        <div class="comment-header">Ask a Question</div>
+        <div class="comment-box">
+            <input type="text" id="userQuestion" class="comment-input" placeholder="Type your question..." required>
+        </div>
+        <button class="comment-submit-btn" id="submitCommentBtn">Submit Question</button>
+    </div>
+    
+    <script>
+        const userQuestions = [];
+        const OPENAI_API_KEY = "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"; // Replace with your OpenAI API key
+    
+        document.getElementById('submitCommentBtn').addEventListener('click', async function() {
+            const question = document.getElementById('userQuestion').value.trim();
+            if (!question) return;
+    
+            // Clear the input field
+            document.getElementById('userQuestion').value = '';
+    
+            // Create a new question object
+            const newQuestion = { 
+                id: userQuestions.length + 1,
+                user: "User", 
+                question, 
+                date: new Date().toLocaleString(),
+                answer: "Fetching response..."
+            };
+    
+            // Add the new question to the array
+            userQuestions.push(newQuestion);
+            displayFAQ(newQuestion);
+    
+            try {
+                const response = await fetch("https://api.openai.com/v1/chat/completions", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${OPENAI_API_KEY}`
+                    },
+                    body: JSON.stringify({
+                        model: "gpt-3.5-turbo",
+                        messages: [{ role: "user", content: question }],
+                        max_tokens: 150
+                    })
+                });
+    
+                const data = await response.json();
+                const chatGptAnswer = data.choices[0].message.content || "Couldn't fetch an answer. Please contact support.";
+                
+                // Update the answer in the FAQ
+                newQuestion.answer = chatGptAnswer;
+                updateFAQ(newQuestion.id, chatGptAnswer);
+            } catch (error) {
+                console.error("Error fetching response:", error);
+                newQuestion.answer = "There was an issue retrieving the answer. Please try again later.";
+                updateFAQ(newQuestion.id, newQuestion.answer);
+            }
+        });
+    
+        function displayFAQ(newQuestion) {
+            const faqAccordion = document.getElementById('faqAccordion');
+            const questionId = 'faq' + newQuestion.id;
+            const collapseId = 'collapse' + newQuestion.id;
+    
+            // Create a new FAQ item in the accordion
+            const faqItem = document.createElement('div');
+            faqItem.classList.add('accordion-item');
+            faqItem.innerHTML = `
+                <h2 class="accordion-header" id="${questionId}">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#${collapseId}" aria-expanded="false" aria-controls="${collapseId}">
+                        ${newQuestion.question}
+                    </button>
+                </h2>
+                <div id="${collapseId}" class="accordion-collapse collapse" aria-labelledby="${questionId}" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body" id="answer-${newQuestion.id}">
+                        ${newQuestion.answer}
+                    </div>
+                </div>
+            `;
+            faqAccordion.appendChild(faqItem);
+        }
+    
+        function updateFAQ(id, answer) {
+            const answerElement = document.getElementById(`answer-${id}`);
+            if (answerElement) {
+                answerElement.innerText = answer;
+            }
+        }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     </div>
+</body>
+</html>

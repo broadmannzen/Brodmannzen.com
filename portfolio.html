@@ -266,7 +266,55 @@
 
  </style>
 <body>
-  <div class="header">
+                <div id="loading-overlay">
+    <div id="loading-content">
+      <div class="loader"></div>
+      <p id="loading-text">Loading... 0%</p>
+    </div>
+  </div>
+  <script>document.addEventListener('DOMContentLoaded', function () {
+    var images = document.images;
+    var totalImages = images.length;
+    var imagesLoaded = 0;
+    var loadingText = document.getElementById('loading-text');
+  
+    if (totalImages === 0) {
+      // No images to load
+      updateProgress(100);
+      hideLoadingOverlay();
+    } else {
+      for (var i = 0; i < totalImages; i++) {
+        var img = new Image();
+        img.onload = img.onerror = function () {
+          imagesLoaded++;
+          var percent = Math.floor((imagesLoaded / totalImages) * 100);
+          updateProgress(percent);
+          if (imagesLoaded === totalImages) {
+            hideLoadingOverlay();
+          }
+        };
+        img.src = images[i].src;
+      }
+    }
+  
+    function updateProgress(percent) {
+      loadingText.textContent = 'Loading... ' + percent + '%';
+    }
+  
+    function hideLoadingOverlay() {
+      var overlay = document.getElementById('loading-overlay');
+      var mainContent = document.getElementById('main-content');
+      overlay.style.transition = 'opacity 0.5s ease';
+      overlay.style.opacity = 0;
+      setTimeout(function () {
+        overlay.style.display = 'none';
+        mainContent.style.display = 'block';
+      }, 500);
+    }
+  });
+  </script>
+  <div id="main-content">
+     <div class="header">
     <div class="left">
       <img class="hamburger-menu" src="icons/hamburger-menu.svg" onclick="openSidebar()">
       <img class="logo" src="A modern sleek 3D log.ico">
@@ -432,6 +480,6 @@
         </script>
         <div></div>
   </div>
+  </div>
 </body>
-<!-- 994dd80eb7b442609af833944320ae70 -->
 </html>

@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /checkout/
+Allow: /wp-content/
+Sitemap: https://brodmannzen.com/sitemap.xml

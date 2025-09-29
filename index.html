@@ -1,569 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brodmannzen</title>
-  <link rel="shortcut icon" href="A modern sleek 3D log.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "BrodmannZen",
-    "url": "https://brodmannzen.com",
-    "logo": "A_modern,_sleek_3D_logo_design_with_curved,_flowin.png",
-    "sameAs": [
-      "https://www.facebook.com/BrodmannZen",
-      "https://www.instagram.com/BrodmannZen"
-    ]
-  }
-  </script>
-  <link rel="stylesheet" href="styles/general.css"> 
-  <link rel="stylesheet" href="styles/header.css">
-  <link rel="stylesheet" href="styles/sidebar.css">
-  <link rel="stylesheet" href="styles/footer.css">
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brodmann Group – Engineering the Future. Empowering Today.</title>
+    <meta name="description" content="Brodmannzen Integrated Solutions (Pty) Ltd provides innovative civil engineering and technology services in South Africa.">
+    <meta name="keywords" content="Brodmannzen, civil engineering South Africa, tech solutions, BIS, engineering company Tzaneen">
+    <meta name="author" content="Brodmannzen Integrated Solutions">
+    <link rel="canonical" href="https://www.brodmannzen.com">
+    <link rel="shortcut icon" href="Brodmann logo.ico">
+    
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#0ea5a4;--muted:#94a3b8}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,var(--bg),#071124);color:#e6eef6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px}
+    .wrapper{max-width:980px;width:100%;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:12px;padding:28px;box-shadow:0 10px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    header{display:flex;align-items:center;gap:16px}
+    .logo{width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:700;color:#022;letter-spacing:0.6px}
+    h1{margin:0;font-size:28px}
+    p.lead{margin:8px 0 20px;color:var(--muted)}
+    .card{background:rgba(255,255,255,0.02);padding:18px;border-radius:10px}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:12px}
+    .gallery img{width:100%;height:140px;object-fit:cover;border-radius:8px;display:block;border:1px solid rgba(255,255,255,0.03)}
+    .center{display:flex;gap:12px;align-items:center;margin-top:18px}
+    .btn{background:var(--accent);color:#022;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
+    footer{margin-top:18px;color:var(--muted);font-size:13px;display:flex;align-items:center;gap:12px}
+    .social-icons a{color:var(--muted);font-size:20px;transition:color 0.3s}
+    .social-icons a:hover{color:var(--accent)}
+    @media (max-width:480px){h1{font-size:20px}.gallery img{height:120px}}
+  </style>
+  <!-- Font Awesome for social icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-    <style>
-      /* Loading Overlay */
-#loading-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('image/pxfuel.jpg') no-repeat center center;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-/* Loading Content */
-#loading-content {
-  text-align: center;
-  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
-  padding: 20px;
-  border-radius: 10px;
-}
-
-/* Circular Loader */
-.loader {
-  border: 8px solid #f3f3f3; /* Light gray background */
-  border-top: 8px solid #3498db; /* Blue color for the loader */
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  animation: spin 2s linear infinite;
-}
-
-/* Spinner animation */
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Loading Text */
-#loading-text {
-  font-size: 24px;
-  color: #333;
-  margin-top: 10px;
-}
-
-/* Hide the main content initially */
-#main-content {
-  display: none;
-}
-      body {
-      background: url('images/pxfuel.jpg'); /* Replace with your image path */
-      background-size: cover;
-      transition: transform 0.3s ease-in-out;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed; /* Keeps it fixed when scrolling */
-      height: 400vh;/* Full height of viewport */
-      min-height: 200hv;
-      display: flex;
-      flex-direction: column;
-      margin-left: 9px;
-      font-size: small;
-      margin-top:22px ;
-      padding: 0px;
-      font-family: 'Roboto'sans-serif;
-      color: rgb(250, 250, 250); /* Adjust text color for better visibility */
-      }
-
-      .main-content {
-        flex: 1;
-        padding-bottom: 20px; /* Ensures content doesn't touch the footer */
-        padding-left: 0px;
-        padding-right: 0px;
-      
-      }
-
-      .request, .order {
-        background-color: rgba(255, 255, 255, 0.2);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        color: white;
-        padding: 10px 20px;
-        font-size: 16px;
-        font-weight: bold;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-        backdrop-filter: blur(5px);
-      }
-
-
-      .layout-container {
-        text-align: center;           
-        width: 99%;
-        max-width: 1200px;
-        margin: 0 auto; /* Centers the container */
-        display: flex; /* Enables flexbox */
-        justify-content: center; /* Centers content horizontally */
-        flex-direction: column; /* Stacks children vertically */
-        }
-        .layout-grid {
-            display: grid;
-            /* flex-direction: column; */
-            /* justify-content: center; */
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .layout-grid-item {
-            background: rgba(245, 245, 245, 0.17);
-            padding: 20px;
-            /* justify-content: center; */
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .icon {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 10px;
-        }
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .button:hover{
-          transform: scale(1.15);
-        }
-        @media (max-width: 768px) {
-            .layout-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 480px) {
-            .layout-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-      .request:hover, .order:hover {
-        background-color: rgba(255, 255, 255, 0.4);
-        transform: scale(1.1);
-        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
-        color: #ffd700;
-      }
-
-
-      .grid-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);/* Fixed 3-column layout*/
-            gap: 19px;
-            max-width: 90%;
-            margin: 50px auto;
-            padding: 20px;
-            height: auto;
-            justify-content: center;          
-
-        }
-
-                /* Adjust for desktop monitors (larger than 1200px) */
-        @media screen and (min-width: 1200px) {
-            .grid-container {
-                grid-template-columns: repeat(3, 1fr); /* Three-column layout */
-                max-width: 80%;
-            }
-          }
-                /* Adjust for tablets */
-        @media screen and (max-width: 1199px) {
-          .grid-container {
-            grid-template-columns: repeat(2, 1fr); /* Fixed 2-column layout for medium screens */
-          }
-        }
-
-        /* Adjust for small screens (below 768px) */
-        @media screen and (max-width: 768px) {
-            .grid-container {
-                grid-template-columns: repeat(1, 1fr); /* More compact layout */
-               
-            }
-        }
-        /* Prevent resizing on hover */
-        .grid-container * {
-          transition: none !important; /* Disable animations */
-        }    
-
-        .title{
-          margin-left: 49px;
-        }
-        .grid-item {
-          background-color: rgb(108, 102, 102);
-          padding: 15px;
-          text-align: left;
-          position: relative;
-          border: 1px solid #ddd;
-          border-radius: 5px;
-          transition: none !important; /* Prevent any hover effects */
-        }
-    </style>
 <body>
-  <div id="loading-overlay">
-    <div id="loading-content">
-      <div class="loader"></div>
-      <p id="loading-text">Loading... 0%</p>
-    </div>
-  </div>
-  <script>document.addEventListener('DOMContentLoaded', function () {
-    var images = document.images;
-    var totalImages = images.length;
-    var imagesLoaded = 0;
-    var loadingText = document.getElementById('loading-text');
-  
-    if (totalImages === 0) {
-      // No images to load
-      updateProgress(100);
-      hideLoadingOverlay();
-    } else {
-      for (var i = 0; i < totalImages; i++) {
-        var img = new Image();
-        img.onload = img.onerror = function () {
-          imagesLoaded++;
-          var percent = Math.floor((imagesLoaded / totalImages) * 100);
-          updateProgress(percent);
-          if (imagesLoaded === totalImages) {
-            hideLoadingOverlay();
-          }
-        };
-        img.src = images[i].src;
-      }
-    }
-  
-    function updateProgress(percent) {
-      loadingText.textContent = 'Loading... ' + percent + '%';
-    }
-  
-    function hideLoadingOverlay() {
-      var overlay = document.getElementById('loading-overlay');
-      var mainContent = document.getElementById('main-content');
-      overlay.style.transition = 'opacity 0.5s ease';
-      overlay.style.opacity = 0;
-      setTimeout(function () {
-        overlay.style.display = 'none';
-        mainContent.style.display = 'block';
-      }, 500);
-    }
-  });
-  </script>
-  <div id="main-content">
-     <div class="header">
-    <div class="left">
-      <img class="hamburger-menu" src="icons/hamburger-menu.svg" onclick="openSidebar()">
-      <img class="logo" src="A modern sleek 3D log.ico">
+  <div class="wrapper">
+    <header>
+      <div class="logo">BIS</div>
+      <div>
+        <h1>The website is reserved for <span style="text-transform:lowercase;font-weight:800">brodmannzen</span></h1>
+        <p class="lead">This domain and its content are reserved for brodmannzen integrated solutions. We'll be back with updates soon.</p>
       </div>
-      <div class="right">
-        <button class="request">Request Quote</button>
-    </div>
-  </div>
+    </header>
 
-  <div class="sidebar" id="sidebar">
-    <span class="close-btn" onclick="closeSidebar()">&times;</span>
-    <a href="index.html">Home</a>
-    <a href="categories.html">Categories</a>
-    <a href="explore.html">Explore</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="partnership.html">Partnership</a>
-    <a href="faq.html">FAQs</a>
-    <a href="ourteam.html">Our Team</a>
-    <a href="news.html">News</a>
-    <a href="reviews.html">Reviews</a>
-  </div>
-  
+    <div class="card">
+      <strong>Gallery</strong>
+      <div class="gallery">
+        <img src="pxfuel (1).jpg" alt="construction + tech">
+        <img src="images/photo2.jpg" alt="engineering" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1200&q=80'">
+        <img src="pxfuel.jpg" alt="coding">
+      </div>
 
-  <script>
-    function openSidebar() {
-      document.getElementById("sidebar").classList.add("open-sidebar");
-    }
+      <div class="center">
+        <a class="btn" href="mailto:brodmannzen@gmail.com">Contact brodmannzen</a>
+        <span style="color:var(--muted);font-size:14px">email: admin@brodmannzen.com <code></code></span>
+      </div>
 
-    function closeSidebar() {
-      document.getElementById("sidebar").classList.remove("open-sidebar");
-    }
-  </script>
-
-  <div class="main-content">
-    <div class="content">
-      <p class="hero">
-        Are you Still <span class="word"><br>Looking for a Website<br></span> for you business?
-      </p>            
-      <p class="welcome">
-        Look no further!! <strong>Brodmannzen is here</strong> to simplify that for you.
-      </p>          
-      <p class="side">
-        This is your place! Get in touch with our service providers at Brodmann.
-        We bring your unique ideas live on the internet by creating a website for you,
-        to help you and solve the problems within your workplace.
-        This is the best platform for your business.<br>
-        Join us we will troubleshoot for you!
-      </p>          
-      <p class="slogen">
-        <strong>Let us take care of the tech while you take care of your business!</strong>
-      </p>
-    </div>
-    <div class="web-id">
-      <img  class="templet" src="pxfuel.jpg">
-    </div>
-    <div class="open">
-      <P>Welcome to Brodmannzen – <span class="here">Your Digital Innovation Partner</span></P>
-      <p> Brodmannzen, we bring your vision to life with cutting-edge web design, development, and digital solutions. Whether you're a startup looking for a strong online presence or an established business aiming to enhance your digital footprint, we have the expertise to create engaging, high-performance websites that captivate and convert.</p>
-    </div>
-  <div class="and-out">
-    Let's Build Something ExtraordinaryYour success is our mission. Partner with Bromannzen for innovative and results-driven web solutions. Contact us today and take the first step towards digital excellence.
-  </div>
-
-  <div class="layout-container">
-    <div class="layout-grid">
-        <div class="layout-grid-item">
-            <img src="https://img.icons8.com/color/96/laptop.png" alt="Optimized for Any Device" class="icon">
-            <h3>Optimized for Any Device</h3>
-            <p>Each theme resizes content and images to fit any device or screen width.</p>
+      <footer>
+        Follow us on 
+        <div class="social-icons" style="display:flex;align-items:center;">
+            <a href="https://www.instagram.com/brodmanngroup" title="Instagram">
+            <img src="icons8-instagram-logo-94.png" alt="Instagram" width="20" style="margin-right:8px;">
+            </a>
+            <a href="https://www.youtube.com/@BRODMANNGROUP" title="YouTube">
+            <img src="icons8-youtube-48.png" alt="YouTube" width="20" style="margin-right:8px;">
+            </a>
+            <a href="https://whatsapp.com/channel/0029Vb6oMKqJJhzY9ny9R12w" title="WhatsApp Channel">
+            <img src="icons8-whatsapp-logo-48.png" alt="WhatsApp" width="20">
+            </a>
         </div>
-        <div class="layout-grid-item">
-            <img src="https://img.icons8.com/color/96/domain.png" alt="Domain Names" class="icon">
-            <h3>Domain Names</h3>
-            <p>Using your own domain name gives your site a professional edge.</p>
-        </div>
-        <div class="layout-grid-item">
-            <img src="https://img.icons8.com/color/96/edit.png" alt="Editing, Simplified" class="icon">
-            <h3>Editing, Simplified</h3>
-            <p>Create, edit, and publish a website with just a few clicks.</p>
-        </div>
-        <div class="layout-grid-item">
-            <img src="https://img.icons8.com/color/96/privacy.png" alt="Password Protection" class="icon">
-            <h3>Password Protection</h3>
-            <p>Keep your website or selected pages private with password protection.</p>
-        </div>
+    </footer>
     </div>
-    <a href="#" class="button">Contact Us</a>
-</div>
-
-  <div class="plan">
-    OUR PRICING PLAN
-    <p class="pay">Once off-payment</p>
-  </div>      
-    <div class="grid-container">
-      <div class="grid-item"><div class="title">
-        SIMPLE WEBSITE(CMS)
-      </div>
-      <ul>
-        <li>Custom Design & Layout</li>
-        <li>Content Management System</li>
-        <li>Essential Pages</li>
-        <li>Security & Performance</li>            
-      </ul> 
-      <div class="price">R 3 000,00 - R 5 000,00</div>
-      </div>
-      <div class="grid-item"><div class="title">
-        BUSINESS WEBSITE
-      </div>
-        <ul>
-          <li>Custom Design & Branding</li>
-          <li>Content Management System (CMS)</li>
-          <li>Full Essential Pages</li>
-          <li>Advanced SEO Optimization</li>
-          <li>E-Commerce & Payment Integration (Optional)</li>
-          <li>Security & Performance</li>
-          <li>Lead Generation & Marketing Tools</li>
-          <li>Support & Maintenance (Optional)</li>
-        </ul>
-        <div class="price">R 6 000,00 - R 16 000,00</div> 
-      </div>
-      <div class="grid-item"><div class="title">
-        EDUCATION WEBSITE
-      </div>
-        <ul>
-          <li>Custom Design & Branding</li>
-          <li>Content Management System (CMS)</li>
-          <li>Full Essential Pages</li>
-          <li>Advanced SEO Optimization</li>
-          <li>E-Commerce & Payment Integration (Optional)</li>
-          <li>Security & Performance</li>
-          <li>Lead Generation & Marketing Tools</li>
-          <li>Support & Maintenance (Optional)</li>
-        </ul> 
-        <div class="price">R 17 000,00 - R 25 000,00</div>
-      </div>
-      <div class="grid-item"><div class="title">
-        CUSTOM WEBSITE
-      </div>
-        <ul>
-          <li>Unique & Tailored Design</li>
-          <li>Content Management System (CMS)</li>
-          <li>Essential Pages & Features</li>
-          <li>Advanced Functionality</li>
-          <li>SEO & Performance Optimization</li>
-          <li>Support & Updates (Optional)</li>
-        </ul>
-        <div class="price">R 24 000,00+</div>
-      </div>
-      <div class="grid-item"><div class="title">
-        E-COMMERCE WEBSITE
-      </div>
-        <ul>
-          <li>Custom Design & Branding</li>
-          <li>Content Management System (CMS)</li>
-          <li>Product Management</li>
-          <li>Shopping Cart & Checkout System</li>
-          <li>Order & Customer Management</li>
-          <li>SEO & Digital Marketing</li>
-          <li>Shipping & Logistics Integration</li>
-          <li>Reviews & Social Proof</li>
-          <li>Support & Maintenance (Optional)</li>
-        </ul>
-        <div class="price">R 28 000,00+</div> 
-      </div>
-      <div class="grid-item"><div class="title">
-        WEBSSITE MANAGEMANT
-      </div>
-        <ul>
-          <li>Website Maintenance & Updates</li>
-          <li>Security & Monitoring</li>
-          <li>Product Management</li>
-          <li>Performance Optimization</li>
-          <li>SEO & Digital Marketing Support</li>
-          <li>Technical Support & Troubleshooting</li>
-          <li>E-Commerce & Transaction Monitoring (If Applicable)</li>
-          <li>Hosting & Domain Management (Optional)</li>
-          <li>Backup & Recovery</li>
-        </ul>
-        <div class="price">R 30 000,00+</div>
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-<button class="order">PLACE ORDER</button>
-<div class="slide-show">
-<img src="../slideshow/slide1.jpg" alt="Slide 1">
-<img src="../slideshow/slide2.jpg" alt="Slide 2">
-<img src="../slideshow/slide3.png" alt="Slide 3">
-<img src="../slideshow/slide4.jpg" alt="Slide 4">
-<img src="../slideshow/slide5.webp" alt="Slide 5">
-</div>  
-</div>
-
-<footer class="footer">
-  <div class="digo-grid">
-    <div class="digo-item">
-      <a href="index.html">
-        <img class="nav" src="icons/icons8-home-50.png">
-        <p>Home</p>
-      </a>
-    </div>
-    <div class="digo-item">
-      <a href="portfolio.html">
-        <img class="nav" src="icons/icons8-portfolio-50.png">
-        <p>Portfolio</p>
-      </a>
-    </div>
-    <div class="digo-item">
-      <a href="faq.html">
-        <img class="nav" src="icons/icons8-faq-50.png">
-        <p>FAQ</p>
-      </a>
-    </div>
-    <div class="digo-item">
-      <a href="ourteam.html">
-        <img class="nav" src="icons/icons8-team-goal-48.png">
-        <p>Our Team</p>
-      </a>
-    </div>
-    <div class="digo-item">
-      <a href="categories.html">
-        <img class="nav" src="icons/icons8-categories-50.png">
-        <p>Categories</p>
-      </a>
-    </div>
-    <div class="digo-item">
-      <a href="explore.html">
-        <img class="nav" src="icons/explore.svg">
-        <p>Explore</p>
-      </a>
-    </div>
-    <div class="digo-item">
-      <a href="news.html">
-        <img class="nav" src="icons/icons8-newspaper-50.png">
-        <p>News</p>
-      </a>
-    </div>
-    <div class="digo-item">
-      <a href="partnership.html">
-        <img class="nav" src="icons/icons8-handshake-50.png">
-        <p>Partnership</p>
-      </a>
-    </div>
-    <div class="digo-item">
-      <a href="reviews.html">
-        <img class="nav" src="icons/icons8-review-50.png">
-        <p>Reviews</p>
-      </a>
-    </div>
-  </div>
-<div class="report">
-  <div class="report-content">
-          <div class="advice">
-            <p class="sure">Looking to make contact with Brodmannzen?</p>
-          <p class="then">Want to make contact brodmann. SAME DAY RESPONSE. Phone or whatsapp us, Email, or use our Immediate Action Request. EXCEPTIONAL CLIENT CARE.<br>WE ARE LOCATED NEAR VUT Vanderbijlpark</p>
-          </div>
-          <div class="service">
-            <h3>Our Services</h3>
-            <p>Web development, Logo design, and Google IT Support.</p>
-  
-          </div>
-          <div class="contacts">
-            <h3>Contact Us</h3>
-             <p>Phone/WhatsApp: <u>+270121318925</u></p>
-             <p>Phone/WhatsApp: <u>+270106563265</u></p>
-            <p>Email: <u>brodmannzen@gmail.com</u></p>
-            <img class="send" src="color-icon/icons8-whatsapp-32.png">
-            <img class="send" src="color-icon/icons8-composing-mail-32.png">
-            <img class="send" src="color-icon/icons8-linkedin-32.png">
-            <img class="send" src="color-icon/icons8-call-32.png">        
-          </div>                
-          <img class="code" src="Code.jpeg">
-        </div>
-      </div>            
-</div>
-<div class="inc">
-  <p><img class="apple" src="icons/icons8-apple-inc-50.png">
-  Place your order to get the best and fast features. <span class="order-link">Order now&#62;</span></p>
-</div>
-<p>At Brodmannzen we’re very proud to be an enabler allowing other businesses to thrive. We’re not just web developer. We’re your tech partner!</p>
-<p>© 2025 Brodmannzen. All Rights Reserved.</p>
-</footer>
-</div>
-  </div>
   </div>
 </body>
-</html> 
-
+</html>

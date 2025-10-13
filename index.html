@@ -22,11 +22,13 @@
     .card{background:rgba(255,255,255,0.02);padding:18px;border-radius:10px}
     .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:12px}
     .gallery img{width:100%;height:140px;object-fit:cover;border-radius:8px;display:block;border:1px solid rgba(255,255,255,0.03)}
-    .center{display:flex;gap:12px;align-items:center;margin-top:18px}
+    .center{display:flex;gap:12px;align-items:center;margin-top:18px;flex-wrap:wrap}
     .btn{background:var(--accent);color:#022;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
-    footer{margin-top:18px;color:var(--muted);font-size:13px;display:flex;align-items:center;gap:12px}
+    footer{margin-top:18px;color:var(--muted);font-size:13px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px}
+    .social-icons{display:flex;align-items:center;justify-content:center;gap:8px}
     .social-icons a{color:var(--muted);font-size:20px;transition:color 0.3s}
     .social-icons a:hover{color:var(--accent)}
+    .legal{margin-top:8px;font-size:12px;color:var(--muted)}
     @media (max-width:480px){h1{font-size:20px}.gallery img{height:120px}}
   </style>
   <!-- Font Awesome for social icons -->
@@ -52,32 +54,34 @@
 
       <div class="center">
         <a class="btn" href="mailto:brodmannzen@gmail.com">Contact brodmannzen</a>
-        <span style="color:var(--muted);font-size:14px">email: admin@brodmannzen.com <code></code></span>
+        <span style="color:var(--muted);font-size:14px">email: info@brodmannzen.com</span>
       </div>
 
       <footer>
-        Follow us on 
-        <div class="social-icons" style="display:flex;align-items:center;">
+        <div>Follow us on</div>
+        <div class="social-icons">
             <a href="https://www.instagram.com/brodmanngroup" title="Instagram">
-            <img src="icons8-instagram-logo-94.png" alt="Instagram" width="20" style="margin-right:8px;">
+              <img src="icons8-instagram-logo-94.png" alt="Instagram" width="20">
             </a>
             <a href="https://www.youtube.com/@BRODMANNGROUP" title="YouTube">
-            <img src="icons8-youtube-48.png" alt="YouTube" width="20" style="margin-right:8px;">
+              <img src="icons8-youtube-48.png" alt="YouTube" width="20">
             </a>
             <a href="https://whatsapp.com/channel/0029Vb6oMKqJJhzY9ny9R12w" title="WhatsApp Channel">
-            <img src="icons8-whatsapp-logo-48.png" alt="WhatsApp" width="20" style="margin-right:8px;">
+              <img src="icons8-whatsapp-logo-48.png" alt="WhatsApp" width="20">
             </a>
-             <a href="https://www.facebook.com/share/1AC74N5xxm/?mibextid=wwXIfr" title="Facebook Channel">
-            <img src="icons8-facebook-logo-48.png" alt="Facebook" width="20" style="margin-right:8px;">
-            </a>             
-             <a href="https://whatsapp.com/channel/0029Vb6oMKqJJhzY9ny9R12w" title="Linkedin">
-            <img src="icons8-linkedin-48.png" alt="Linkedin" width="20">
+            <a href="https://www.facebook.com/share/1AC74N5xxm/?mibextid=wwXIfr" title="Facebook">
+              <img src="icons8-facebook-logo-48.png" alt="Facebook" width="20">
+            </a>
+            <a href="https://www.linkedin.com/company/brodmannzen" title="LinkedIn">
+              <img src="icons8-linkedin-48.png" alt="LinkedIn" width="20">
             </a>
         </div>
-    </footer>
+
+        <div class="legal">
+          2025 Privacy Policy | Disclaimer | All Rights Reserved © Brodmannzen Integrated Solutions (Pty) Ltd
+        </div>
+      </footer>
     </div>
   </div>
 </body>
 </html>
-
-
